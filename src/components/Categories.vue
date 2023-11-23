@@ -67,5 +67,6 @@
   onMounted(async () => {
     const response = await axios.get("/api/category");
     categories.value = response.data.categories;
+    emits("chosen", categories.value[0]);
   });
 </script>
