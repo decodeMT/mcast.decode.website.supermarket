@@ -1,4 +1,6 @@
-import products from "../products.json" assert { type: "json" };
+// import products from "../products.json" assert { type: "json" };
+import { readFileSync } from "fs";
+import path from "path";
 
 export default function (req, res) {
   try {
@@ -9,6 +11,11 @@ export default function (req, res) {
 
     if (!category)
       res.status(400).json({ message: `Must specify category query` });
+
+    const file = path.join(process.cwd(), "data", "products.json");
+    const stringified = readFileSync(file, "utf8");
+
+    const products = JSON.parse(stringified);
 
     let prods = products.filter((el) => {
       return el.category === category;
