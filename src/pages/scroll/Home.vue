@@ -59,7 +59,7 @@
   };
 
   window.onscroll = () => {
-    // if (endOfPage.value === true) return;
+    if (endOfPage.value === true) return;
 
     let scrollPosition =
       document.documentElement.scrollTop + window.innerHeight;

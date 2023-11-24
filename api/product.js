@@ -7,7 +7,7 @@ export default function (req, res) {
     let { category, page } = req.query;
 
     page = Number(page);
-    const pageSize = 25;
+    const pageSize = 20;
 
     if (!category)
       res.status(400).json({ message: `Must specify category query` });

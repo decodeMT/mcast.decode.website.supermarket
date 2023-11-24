@@ -19,7 +19,7 @@ export const getProducts = (category, page) => {
   if (!category || !page) return null;
 
   const numPage = Number(page);
-  const pageSize = 25;
+  const pageSize = 20;
 
   let prods = products.filter((el) => {
     return el.category === category;
