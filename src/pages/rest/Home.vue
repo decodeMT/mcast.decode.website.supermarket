@@ -43,7 +43,6 @@
   import { ref, watch } from "vue";
   import axios from "axios";
   import Product from "../../components/Product.vue";
-  import MarketLogo from "../../assets/market logo.png";
 
   const products = ref([]);
   const chosenCategory = ref("");

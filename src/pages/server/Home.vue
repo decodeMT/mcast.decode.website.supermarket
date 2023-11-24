@@ -43,7 +43,7 @@
 <script setup>
   import { ref, watch } from "vue";
   import Product from "../../components/Product.vue";
-  import MarketLogo from "../../assets/market logo.png";
+
   import { getProducts } from "../../store/store";
   import CategoriesServer from "../../components/CategoriesServer.vue";
 
