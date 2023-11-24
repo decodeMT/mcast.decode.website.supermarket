@@ -1,7 +1,7 @@
 <template>
   <div class="hidden lg:grid grid-cols-10 grid-rows-1 gap-2 w-full">
     <button
-      @click="selectedCategory = category"
+      @click="selectedCategory = category.key"
       v-for="category in categories"
       class="flex flex-col max-w-[140px] hover:grayscale-0 duration-200 active:scale-90"
       :class="
@@ -78,6 +78,6 @@
 
   onMounted(() => {
     categories.value = getCategories();
-    selectedCategory.value = categories.value[0];
+    selectedCategory.value = categories.value[0].key;
   });
 </script>

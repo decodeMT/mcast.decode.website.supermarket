@@ -56,6 +56,7 @@
   });
 
   const getData = async () => {
+    console.log(chosenCategory.value);
     const response = getProducts(chosenCategory.value.key, currentPage.value);
     products.value = response;
   };
