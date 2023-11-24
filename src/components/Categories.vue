@@ -1,13 +1,16 @@
 <template>
   <div class="hidden lg:grid grid-cols-10 grid-rows-1 gap-2 w-full">
     <button
-      @click="emits('chosen', category)"
+      @click="selectedCategory = category"
       v-for="category in categories"
-      class="flex flex-col max-w-[140px] grayscale hover:grayscale-0 duration-200 active:scale-90"
+      class="flex flex-col max-w-[140px] hover:grayscale-0 duration-200 active:scale-90"
+      :class="
+        selectedCategory.key === category.key ? 'grayscale-0' : 'grayscale'
+      "
     >
       <img
         :src="keyToImageMapping[category.key]"
-        class="w-full max-w-[75px] mx-auto"
+        class="w-full max-w-[50px] mx-auto"
       />
       <span class="hidden lg:block text-sm text-center w-full py-2 category">
         {{ category.display }}</span
@@ -19,7 +22,7 @@
       v-model="selectedCategory"
       class="w-full focus:border-lime-600 border-2 rounded-lg p-2"
     >
-      <option :value="null">Select a Category</option>
+      <option :value="null" disabled>Select a Category</option>
       <option v-for="category in categories" :value="category" class="category">
         {{ category.display }}
       </option>
@@ -67,6 +70,8 @@
   onMounted(async () => {
     const response = await axios.get("/api/category");
     categories.value = response.data.categories;
-    emits("chosen", categories.value[0]);
+
+    if (categories.value.length > 0)
+      selectedCategory.value = categories.value[0];
   });
 </script>

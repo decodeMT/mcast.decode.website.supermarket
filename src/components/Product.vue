@@ -1,30 +1,19 @@
 <template>
   <div
-    class="product flex flex-col justify-start border-2 rounded-lg border-slate-200 overflow-hidden min-h-[250px] duration-300 hover:border-slate-300 hover:shadow-lg group"
+    class="flex flex-col max-h-[250px] min-h-[250px] bg-slate-100 rounded-lg hover:shadow-lg overflow-hidden shadow-sm"
   >
-    <span class="flex flex-1">
-      <img
-        :src="productPlaceholder"
-        class="w-full max-h-[100px] min-h-[100px] h-full object-contain saturate-0 group-hover:saturate-100 duration-300 p-4"
+    <span class="flex justify-center items-center h-[100px]">
+      <img :src="productPlaceholder" class="h-[75px]"
     /></span>
-    <span class="flex flex-col flex-1 bg-slate-100">
+    <span class="flex flex-col flex-1 justify-end">
       <span
-        class="product_name text-lg font-medium p-2 text-slate-800 items-center border-y border-slate-300"
+        class="text-lg font-semibold p-2 flex flex-1 items-center justify-center text-center text-slate-700"
         >{{ product.product }}</span
       >
-      <span class="flex w-full justify-between flex-wrap bg-slate-200 flex-1">
-        <span
-          class="product_price w-full lg:w-4/12 text-2xl flex justify-center py-2 font-bold items-center border-transparent text-slate-800 border-r-[1.5px] border-slate-300"
-          >€{{ product.salesprice }}</span
-        >
-        <span class="w-full lg:w-8/12 flex flex-wrap items-start p-2">
-          <span
-            v-for="label in product.labels.split(';')"
-            class="product_label bg-lime-600 whitespace-nowrap rounded text-blue-50 font-medium text-xs px-1 m-0.5"
-          >
-            {{ label.trim() }}
-          </span>
-        </span>
+      <span
+        class="text-3xl flex justify-center items-center font-bold p-2 bg-slate-200 text-slate-700"
+      >
+        €{{ product.salesprice.toFixed(2) }}
       </span></span
     >
   </div>

@@ -1,14 +1,19 @@
 <template>
-  <div class="flex flex-col w-full px-12 py-4">
-    <div class="flex items-center mb-4">
-      <img :src="MarketLogo" class="w-[150px]" />
-      <span class="text-2xl lg:text-5xl text-lime-600 font-extrabold"
+  <div class="flex flex-col w-full px-12 py-4 space-y-6">
+    <div class="flex justify-center py-4 lg:py-10">
+      <span class="text-3xl lg:text-5xl text-lime-600 font-extrabold"
         >Lime Supermarket</span
       >
     </div>
-    <Categories @chosen="updateProductList"></Categories>
-    <div class="flex flex-col my-12 items-center">
-      <h6 class="text-2xl font-bold">{{ chosenCategory.display }}</h6>
+
+    <div class="lg:px-12 px-0">
+      <Categories @chosen="updateProductList"></Categories>
+    </div>
+
+    <div class="flex flex-col my-12 items-center pb-4">
+      <h6 class="text-2xl font-bold text-slate-700">
+        {{ chosenCategory.display }}
+      </h6>
     </div>
     <div
       class="grid grid-cols-2 lg:grid-cols-5 grid-rows-auto px-0 lg:px-12 gap-10 items-center"
@@ -18,7 +23,7 @@
     </div>
     <div
       v-if="chosenCategory"
-      class="my-6 flex justify-center items-center space-x-4"
+      class="flex justify-center items-center space-x-4"
     >
       <span>Page</span>
       <select
