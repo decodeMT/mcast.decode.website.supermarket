@@ -53,6 +53,7 @@
   };
 
   const updateProductList = async (category) => {
+    products.value = [];
     chosenCategory.value = category;
     currentPage.value = 1;
     await getData();
