@@ -3,6 +3,7 @@
     <router-link :to="{ name: 'root' }">ROOT</router-link>
     <router-link :to="{ name: 'rest' }">Rest</router-link>
     <router-link :to="{ name: 'server' }">server</router-link>
+    <router-link :to="{ name: 'scroll' }">scroll</router-link>
   </div>
 </template>
 
