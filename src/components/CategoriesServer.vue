@@ -23,7 +23,11 @@
       class="w-full focus:border-lime-600 border-2 rounded-lg p-2"
     >
       <option :value="null" disabled>Select a Category</option>
-      <option v-for="category in categories" :value="category" class="category">
+      <option
+        v-for="category in categories"
+        :value="category.key"
+        class="category"
+      >
         {{ category.display }}
       </option>
     </select>
@@ -64,7 +68,12 @@
   const selectedCategory = ref(null);
 
   watch(selectedCategory, (val) => {
-    emits("chosen", val);
+    emits(
+      "chosen",
+      categories.value.find((el) => {
+        return el.key === val;
+      })
+    );
   });
 
   onMounted(() => {
