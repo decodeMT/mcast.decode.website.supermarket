@@ -36,6 +36,6 @@ export const getProducts = (category, page) => {
     currentRecords: slicedProds.length,
     offset: numPage * pageSize,
     totalRecords: prods.length,
-    totalPages: Math.floor(prods.length / pageSize),
+    totalPages: Math.floor(prods.length / pageSize) - 1,
   };
 };

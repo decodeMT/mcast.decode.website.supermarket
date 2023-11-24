@@ -32,7 +32,7 @@ export default function (req, res) {
       currentRecords: slicedProds.length,
       offset: page * pageSize,
       totalRecords: prods.length,
-      totalPages: Math.floor(prods.length / pageSize),
+      totalPages: Math.floor(prods.length / pageSize) - 1,
     });
   } catch (error) {
     res.status(500).json({ message: error });
