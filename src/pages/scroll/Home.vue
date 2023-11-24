@@ -59,17 +59,19 @@
   };
 
   window.onscroll = () => {
-    if (endOfPage.value) return;
-    let bottomOfWindow =
-      document.documentElement.scrollTop + window.innerHeight ===
-      document.documentElement.offsetHeight;
+    // if (endOfPage.value === true) return;
 
-    if (bottomOfWindow) {
+    let scrollPosition =
+      document.documentElement.scrollTop + window.innerHeight;
+    let offsetHeight = document.documentElement.offsetHeight;
+
+    // Check if the scroll position is within 10 pixels of the page bottom
+    if (scrollPosition >= offsetHeight - 5 && !isLoadingMore.value) {
       isLoadingMore.value = true;
       setTimeout(() => {
         currentPage.value++;
         isLoadingMore.value = false;
-      }, Math.random(3) * 2000);
+      }, Math.random(3) * 4000);
     }
   };
 </script>
