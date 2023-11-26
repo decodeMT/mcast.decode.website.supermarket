@@ -30,7 +30,7 @@
       <span>Page</span>
       <select
         v-model="currentPage"
-        class="focus:border-lime-600 border-2 rounded-lg p-2"
+        class="page_dropdown focus:border-lime-600 border-2 rounded-lg p-2"
       >
         <option v-for="page in products.totalPages" :value="page">
           {{ page }}
