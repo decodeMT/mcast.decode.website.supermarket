@@ -56,6 +56,7 @@
     products.value = [];
     chosenCategory.value = category;
     currentPage.value = 1;
+    endOfPage.value = false;
     await getData();
   };
 
