@@ -1,7 +1,9 @@
-# Vue 3 + Vite
+##### Mock Supermarket Website for Scraping
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A repository for helping students to learn to scrape.
 
-## Recommended IDE Setup
+Upon loading this website offers three mock-pages:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- rest - Mocks an API server to fetch product details.
+- server - Mocks a server-side rendered with pagination.
+- scroll - Mocks an infinite scroll server-side rendered page.
