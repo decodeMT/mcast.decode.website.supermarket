@@ -1,6 +1,7 @@
 <template>
   <div
     class="flex flex-col bg-gradient-to-b from-teal-600 to-lime-700 min-h-screen min-w-full justify-center items-center"
+    :style="`background: url(${background}); background-size: cover`"
   >
     <div
       class="bg-white flex flex-col p-8 rounded-lg bg-opacity-80 backdrop-blur-sm max-w-[400px]"
@@ -35,4 +36,6 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+  import background from "./assets/background.jpg";
+</script>
